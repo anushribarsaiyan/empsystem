@@ -1,0 +1,45 @@
+{% include "navbar.html" %}
+{% block start %} 
+
+<div class ="row">
+    <div class="col-4">
+        <div class ="container mt-2 ml-1">
+            <form class="card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <h2>Add Employee</h2>
+                <hr>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">First_name</label>
+                    <input type="text" class="form-control"  value ="{{update_employee_data.First_name}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name" name ="First_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Last Name</label>
+                    <input type="text" class="form-control" value ="{{update_employee_data.last_name}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name" name="last_name" required>
+                
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Birth Date</label>
+                    <input type="text" class="form-control"  value ="{{update_employee_data.dob}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Birth date" name ="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Gender</label>
+                    <input type="text" class="form-control" value ="{{update_employee_data.gender}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gender" name ="gender" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Hire Date</label>
+                    <input type="text" class="form-control"  value ="{{update_employee_data.hire_date}}"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hire Date" name = "hire_date" required    >
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Image</label>
+                    <input type="file" name="emp_image" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">update Employee</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

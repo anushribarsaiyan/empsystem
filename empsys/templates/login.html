@@ -1,0 +1,21 @@
+{% include "navbar.html" %}
+{% block start %}
+
+<div class="container mt-5 ">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" class="form-control" name ="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="username">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name ="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <!-- <p I dont have account><a href='/register/'>Link Description</a></p> -->
+</div>
+{% endblock %}
